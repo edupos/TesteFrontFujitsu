@@ -1,0 +1,51 @@
+
+<div class="left"><mat-icon class="link" (click)="back()">arrow_back</mat-icon></div>
+<div>Carrinho de compras</div> 
+
+<mat-card class="product-card big-card">
+    <mat-card-header>
+        <mat-card-title>Produtos</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+     
+        <mat-table #table [dataSource]="getDatasorce()"> 
+                
+            <ng-container matColumnDef="Produto">
+                <mat-header-cell *matHeaderCellDef> Produto </mat-header-cell>
+                <mat-cell *matCellDef="let element"> {{element.produto.nome}} </mat-cell>
+            </ng-container>
+        
+            <ng-container matColumnDef="Quantidade">
+                <mat-header-cell *matHeaderCellDef> Quantidade </mat-header-cell>
+                <mat-cell *matCellDef="let element">
+                    <mat-form-field>
+                        <input matInput tabindex="1" type="number" [(ngModel)]="element.qtd"  >
+                    </mat-form-field>                        
+                </mat-cell>
+            </ng-container>
+        
+            <ng-container matColumnDef="Total">
+                <mat-header-cell *matHeaderCellDef> Total </mat-header-cell>
+                <mat-cell *matCellDef="let element"> R${{element.produto.valor * element.qtd  | number : '1.2-2'}} </mat-cell>
+            </ng-container>        
+        
+            <ng-container matColumnDef="Excluir">
+                    <mat-header-cell *matHeaderCellDef> Excluir </mat-header-cell>
+                    <mat-cell *matCellDef="let element"> <mat-icon class="link" (click)="deleteItem(element)">delete</mat-icon> </mat-cell>
+                </ng-container> 
+
+            <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+            <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+        </mat-table>
+        <div class="center" *ngIf="pedido.pedidoItemList.length == 0">
+            Nenhum produto adicionado ao carrinho
+        </div>
+        <div class="center">
+                Total: R${{sumTotal() | number : '1.2-2'}}
+        </div>
+    </mat-card-content>
+    <mat-card-actions>
+        <button mat-button (click)="back()" tabindex="-1">Continuar comprando</button>
+        <button mat-raised-button color="accent" (click)="finalizarCompra()" >Finalizar compra</button>
+    </mat-card-actions>
+</mat-card>

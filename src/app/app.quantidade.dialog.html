@@ -1,0 +1,11 @@
+<h1 mat-dialog-title>Quantidade</h1>
+<div mat-dialog-content>
+  <p>Qual a quantidade de {{data.produtoSel}}, você deseja comprar?</p>
+  <mat-form-field>
+    <input matInput tabindex="1" type="number" [(ngModel)]="data.qtd">
+  </mat-form-field>
+</div>
+<div mat-dialog-actions class="center">
+    <button mat-button (click)="onNoClick()" tabindex="-1">Cancelar</button>
+    <button mat-button [mat-dialog-close]="data.qtd" tabindex="2">Ir para o carrinho</button>  
+</div>

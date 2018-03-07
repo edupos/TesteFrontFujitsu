@@ -1,0 +1,13 @@
+TESTE: Fujitsu
+NOME: Eduardo dos Santos
+
+Informações do pacote
+
+- Usei o Visual Code, para desenvolver
+- Usei o angular 5 com a última versão do Material.
+- É necessário estar com o NodeJS instalado
+- Rodar o comando: npm install
+- Para testar, rodar o comando: ng serve . E acessar no localhost:4200
+- Não fiz os testes automatizados, pois tive problemas com o karma, que não estava reconhecendo alguns código que deveriam ser válidos.
+  Mas também eu não tenho muito conhecimento nessa parte.
+- Print de telas na pasta printsTela

@@ -1,0 +1,27 @@
+<img mat-card-image class="banner" src="../assets/imgs/banner.jpg" alt="Banner Compra Feliz">
+<form class="form"  #clienteForm="ngForm" novalidate>
+  <mat-form-field class="full-width">
+      <input type="text" placeholder="Procurar"  matInput           
+      #nome="ngModel"
+      name="nome"
+      [(ngModel)]="pesquisar.nome"
+      (keyup)="filterProduto()">
+  </mat-form-field>
+ </form>
+ 
+<div class="div-mat-card"> 
+    <mat-card *ngFor = "let p of produtos" class="product-card">
+    <mat-card-header>
+        <mat-card-title class="link" [routerLink]="['/produto',p.id]">{{p.nome}}</mat-card-title>
+    </mat-card-header>
+    <img class="link" [routerLink]="['/produto',p.id]" mat-card-image src="../assets/imgs/{{p.id}}.jpg" alt="{{p.nome}}">
+    <mat-card-content>
+        <p>
+        {{p.resumo}}
+        </p>
+    </mat-card-content>
+    <mat-card-actions>
+        <button mat-raised-button color="accent" (click)="openDialog(p);" >Comprar</button>
+    </mat-card-actions>
+    </mat-card>
+</div>

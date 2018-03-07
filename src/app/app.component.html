@@ -1,0 +1,18 @@
+<div>
+  <mat-toolbar color="primary">
+    
+    <div class="col-md-11 projectTitle">
+      <span class="link" [routerLink]="['']">Compra Feliz</span>
+    </div>
+    <div class="col-md-1 loggin">
+        <span><mat-icon class="link" [routerLink]="['/pedido']">shopping_cart</mat-icon></span>
+      <span><mat-icon>mood</mat-icon></span>
+      <span>Eduardo dos Santos</span>
+    </div>
+  </mat-toolbar>
+
+  <mat-card class="form-card">  
+      <router-outlet> </router-outlet>
+  </mat-card>
+
+</div>

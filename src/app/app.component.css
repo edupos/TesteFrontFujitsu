@@ -1,0 +1,89 @@
+body {
+    margin: 0;
+    font-family: Roboto, sans-serif;
+    width: 100%;
+  }
+  
+  mat-card {
+    max-width: 90%;
+    margin: 2em auto;
+    text-align: center;
+  }
+  
+  mat-toolbar-row {
+    justify-content: space-between;
+  }
+  
+  .done {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    color: white;
+  }
+
+
+  .projectTitle
+  {
+    text-align:left;
+    width: 80%;
+  }
+
+  .loggin
+  {
+    text-align:right;
+  }
+
+  .form-card {
+    min-width: 90%;
+    width: 100%;
+  }
+
+  .form {
+    min-width: 100%;
+
+  }
+
+  .full-width {
+    width: 400px;
+  }
+
+  .product-card {
+    margin: 2em auto;
+    text-align: center;
+    min-height: 400px;
+    width: 29%;
+    float:left;
+    margin: 5px;
+    margin-top: 50px;
+  }
+
+  div-mat-card {
+    width: 100%;
+    margin: 2em auto;
+    text-align: center;
+
+  }
+
+  mat-card img {
+    width: 60%;
+
+  }
+
+  .product-card mat-card-title {
+    font-size: 30px;
+    font-weight: 5px;
+  }
+
+  mat-card .banner {
+
+    width:100%;
+    margin-top: 1px;
+  }
+  .center {
+
+    text-align:center;
+
+  }
+  .link {
+    cursor: pointer;
+  }  
